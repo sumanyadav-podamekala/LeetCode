@@ -1,0 +1,11 @@
+Python code
+class Solution:
+    def searchInsert(self, nums, target):
+        try:
+            index = nums.index(target)
+            return index
+        except ValueError:
+            for i, num in enumerate(nums):
+                if num > target:
+                    return i
+            return len(nums)
