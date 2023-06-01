@@ -1,0 +1,19 @@
+594. Longest Harmonious Subsequence
+
+https://leetcode.com/problems/longest-harmonious-subsequence/description/
+
+
+from collections import Counter
+
+class Solution:
+    def findLHS(self, nums):
+        num_counts = Counter(nums)  # Count occurrences of each number
+        
+        max_length = 0
+        
+        for num in num_counts:
+            if num + 1 in num_counts:  # Check if adjacent number exists
+                current_length = num_counts[num] + num_counts[num + 1]  # Calculate length of harmonious subsequence
+                max_length = max(max_length, current_length)
+        
+        return max_length
