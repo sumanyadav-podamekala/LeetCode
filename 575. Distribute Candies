@@ -1,0 +1,8 @@
+https://leetcode.com/problems/distribute-candies/description/
+
+class Solution:
+    def distributeCandies(self, candyType):
+        unique_types = set(candyType)  
+        max_candies = len(candyType) // 2 
+        
+        return min(max_candies, len(unique_types))  
