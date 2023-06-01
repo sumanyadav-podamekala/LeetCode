@@ -1,0 +1,17 @@
+561. Array Partition
+
+https://leetcode.com/problems/array-partition/description/
+
+
+class Solution:
+    def arrayPairSum(self, nums):
+        nums.sort()  # Sort the array in ascending order
+        result = 0
+        
+        # Iterate over the array in pairs using enumerate
+        for i, num in enumerate(nums):
+            # Increment the result by the minimum value of each pair (every second element)
+            if i % 2 == 0:
+                result += num
+        
+        return result
