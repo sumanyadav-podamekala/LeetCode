@@ -1,0 +1,16 @@
+https://leetcode.com/problems/maximum-product-of-three-numbers/description/
+628. Maximum Product of Three Numbers
+
+class Solution:
+    def maximumProduct(self, nums):
+        nums.sort()  # Sort the numbers in ascending order
+        n = len(nums)
+        
+        # Calculate the product of the three largest numbers
+        max_product = nums[n - 1] * nums[n - 2] * nums[n - 3]
+        
+        # Calculate the product of the two smallest numbers and the largest number
+        min_product = nums[0] * nums[1] * nums[n - 1]
+        
+        # Return the maximum of max_product and min_product
+        return max(max_product, min_product)
