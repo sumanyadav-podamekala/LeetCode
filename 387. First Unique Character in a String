@@ -1,0 +1,19 @@
+https://leetcode.com/problems/first-unique-character-in-a-string/description/
+
+387. First Unique Character in a String
+
+class Solution:
+    def firstUniqChar(self, s):
+        char_count = {}
+        
+        # Count the occurrences of each character
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        
+        # Find the first unique character
+        for i in range(len(s)):
+            if char_count[s[i]] == 1:
+                return i
+        
+        return -1
+
